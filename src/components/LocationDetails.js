@@ -10,5 +10,4 @@ LocationDetails.propTypes = {
   city: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
 };
-
 export default LocationDetails;
