@@ -6,16 +6,20 @@ import ForecastSummary from "./ForecastSummary";
 
 function App({ forecasts, location }) {
   const { city, country } = location;
-  const { date, temperature, description, icon } = forecasts;
   return (
     <div className="app">
       <LocationDetails city={city} country={country} />
-      <ForecastSummary
-        date={date}
-        temp={temperature}
-        description={description}
-        icon={icon}
-      />
+      {forecasts.map((forecast) => {
+        return (
+          <ForecastSummary
+            key={forecast.date}
+            date={forecast.date}
+            temperature={forecast.temperature}
+            description={forecast.description}
+            icon={forecast.icon}
+          />
+        );
+      })}
     </div>
   );
 }
